@@ -6,7 +6,8 @@ window.onload = function() {
 
 	centerX = width / 2,
 	centerY = height / 2,
-	radius = 200,
+	xRadius = 200,
+	yRadius = 400,
 	angle  = 0,
 	speed = 0.01,
 	x, y
@@ -15,8 +16,8 @@ window.onload = function() {
 
 	function render() {
 		context.clearRect(0, 0, width, height)
-		x = centerX + radius * Math.cos(angle)
-		y = centerY + radius * Math.sin(angle)
+		x = centerX + xRadius * Math.cos(angle)
+		y = centerY + yRadius * Math.sin(angle)
 		context.beginPath()
 		context.arc(x, y, 10, 0, Math.PI * 2, false)
 		context.fill()
