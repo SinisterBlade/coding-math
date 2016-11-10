@@ -8,7 +8,10 @@ window.onload = function() {
 	centerY = height / 2,
 	xRadius = 200,
 	yRadius = 400,
-	angle  = 0,
+	xAngle  = 0,
+	yAngle = 0,
+	xspeed = 0.1,
+	yspeed = 0.131,
 	speed = 0.01,
 	x, y
 
@@ -16,13 +19,14 @@ window.onload = function() {
 
 	function render() {
 		context.clearRect(0, 0, width, height)
-		x = centerX + xRadius * Math.cos(angle)
-		y = centerY + yRadius * Math.sin(angle)
+		x = centerX + xRadius * Math.cos(xAngle)
+		y = centerY + yRadius * Math.sin(yAngle)
 		context.beginPath()
 		context.arc(x, y, 10, 0, Math.PI * 2, false)
 		context.fill()
 
-		angle += speed
+		xAngle += xspeed
+		yAngle += yspeed
 		requestAnimationFrame(render)
 	}
 }
